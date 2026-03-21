@@ -1,0 +1,47 @@
+Sub-Nbhood,ZIP_LIST,ZIP_COUNT
+Upper West Side,10023|10024|10025|10069,4
+Lincoln Square,10023|10069,2
+Upper East Side,10021|10028|10065|10075|10128,5
+Yorkville,10028|10075|10128,3
+Lenox Hill,10021|10028|10065,3
+Chelsea,10001|10011,2
+Greenwich Village,10011|10012|10014,3
+Murray Hill,10016|10017,2
+Hells Kitchen,10019|10036|10018,3
+TriBeCa,10007|10013,2
+Turtle Bay,10017|10022,2
+Sutton Place,10022,1
+Gramercy Park,10010|10016,2
+Midtown Center,10019|10020|10036|10017|10022,5
+West Village,10014,1
+Financial District,10004|10005|10006|10038,4
+Carnegie Hill,10021|10028|10128,3
+East Village,10003|10009,2
+Lower East Side,10002|10009,2
+Kips Bay,10010|10016,2
+South Harlem,10026|10027|10030,3
+Manhattan Valley,10025,1
+Central Harlem,10026|10027|10030|10037|10039,5
+Flatiron,10010|10011|10001,3
+Battery Park City,10280|10004,2
+East Harlem,10029|10035,2
+NoMad,10001|10010|10016,3
+Hudson Heights,10033|10040,2
+Morningside Heights,10025|10027,2
+SoHo,10012|10013,2
+Hamilton Heights,10031|10032,2
+Washington Heights,10032|10033|10040,3
+Hudson Square,10013|10014,2
+South Street Seaport,10038,1
+NoHo,10012|10003,2
+Midtown South,10001|10016|10018,3
+Two Bridges,10002,1
+Inwood,10034|10040,2
+Hudson Yards,10001|10018,2
+Roosevelt Island,10044,1
+NoLita,10012|10013,2
+Chinatown,10013|10002,2
+Civic Center,10007|10038,2
+Fort George,10033|10040,2
+West Harlem & Manhattanville,10027|10031,2
+Little Italy,10012|10013,2

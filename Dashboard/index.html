@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manhattan Housing & Economic Regimes Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-elements">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar glass-panel">
+            <div class="sidebar-header">
+                <h2>Economic Housing Pulse</h2>
+                <p>Manhattan Analysis</p>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#overview" class="nav-link active">Project Overview</a>
+                <a href="#macro" class="nav-link">Macro & Sentiment</a>
+                <a href="#regimes" class="nav-link">Economic Regimes</a>
+                <a href="#housing" class="nav-link">Housing Segments</a>
+                <a href="#models" class="nav-link">Predictive Models</a>
+            </nav>
+            <div class="sidebar-footer">
+                <p>Phase 5 Synthesis<br>Applied Machine Learning</p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-header glass-panel">
+                <h1>Interactive Data Synthesis Dashboard</h1>
+                <div class="status-indicator">
+                    <span class="status-dot"></span>
+                    <span id="data-status">Loading Dataset...</span>
+                </div>
+            </header>
+
+            <div class="content-scroll">
+                
+                <!-- Section 1: Overview -->
+                <section id="overview" class="dashboard-section active-section">
+                    <div class="cards-grid">
+                        <div class="metric-card glass-panel">
+                            <h3>Total Transactions</h3>
+                            <div class="metric-value" id="val-transactions">--</div>
+                            <div class="metric-sub">Across Manhattan</div>
+                        </div>
+                        <div class="metric-card glass-panel">
+                            <h3>Unique Regimes</h3>
+                            <div class="metric-value" id="val-regimes">--</div>
+                            <div class="metric-sub">K-Means Clustered</div>
+                        </div>
+                        <div class="metric-card glass-panel">
+                            <h3>Predictive R²</h3>
+                            <div class="metric-value" id="val-r2">0.82+</div>
+                            <div class="metric-sub">Regime+Sentiment Model</div>
+                        </div>
+                    </div>
+                    <div class="chart-container glass-panel large-chart">
+                        <h3>Project Research Question</h3>
+                        <p class="summary-text">
+                            "How do Manhattan apartment prices respond to macroeconomic conditions across different economic regimes, and does incorporating textual sentiment from FOMC communications improve predictive accuracy?" <br><br>
+                            <strong>Conclusion:</strong> Yes. While regimes alone don't shift baseline pricing globally, the <em>interaction</em> between regimes and specific housing segments (e.g., 2-bedrooms in TriBeCa) is highly significant. Adding Regimes and FOMC Sentiment to Random Forest models outperformed baseline macroeconomic models.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Section 2: Macro & Sentiment -->
+                <section id="macro" class="dashboard-section hidden">
+                    <div class="chart-container glass-panel large-chart">
+                        <div class="chart-header">
+                            <h3>FEDFUNDS & FOMC Polarity over Time</h3>
+                        </div>
+                        <div class="chart-wrapper">
+                            <canvas id="macroChart"></canvas>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 3: Regimes -->
+                <section id="regimes" class="dashboard-section hidden">
+                    <div class="chart-container glass-panel large-chart">
+                        <h3>Regime Distribution over Time</h3>
+                        <div class="chart-wrapper">
+                            <canvas id="regimeScatterChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-container glass-panel large-chart">
+                        <h3>Regime Characteristics (Radar)</h3>
+                        <!-- Radar chart summarizing standardized means of each regime -->
+                        <div class="chart-wrapper">
+                            <canvas id="regimeRadarChart"></canvas>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 4: Housing Segments -->
+                <section id="housing" class="dashboard-section hidden">
+                    <div class="controls glass-panel">
+                        <label for="neighborhoodSelect">Select Neighborhood:</label>
+                        <select id="neighborhoodSelect" class="glass-select">
+                            <option value="All">Top 5 Neighborhoods</option>
+                        </select>
+                    </div>
+                    <div class="chart-container glass-panel large-chart">
+                        <h3>Median Sale Prices by Regime & Beds (Log Scale)</h3>
+                        <div class="chart-wrapper">
+                            <canvas id="housingBoxplotChart"></canvas>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 5: Models -->
+                <section id="models" class="dashboard-section hidden">
+                    <div class="cards-grid dual-grid">
+                        <div class="chart-container glass-panel large-chart">
+                            <h3>Model RMSE Comparison</h3>
+                            <div class="chart-wrapper">
+                                <canvas id="rmseChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="chart-container glass-panel large-chart">
+                            <h3>Top Feature Importances</h3>
+                            <div class="chart-wrapper">
+                                <canvas id="featureChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
