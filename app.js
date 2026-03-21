@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Load Data
-    Papa.parse('../Dataset/integrated_panel_with_regimes.csv', {
+    Papa.parse('./integrated_panel_with_regimes.csv', {
         download: true,
         header: true,
         dynamicTyping: true,
